@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { BackgroundBoxesDemo } from "@/components/Background";
 import NavbarDemo from "@/components/Navbar";
+import { HeroParallaxDemo } from "@/components/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavbarDemo/>
         <BackgroundBoxesDemo/>
+        <HeroParallaxDemo/>
         {children}
         </body>
     </html>
