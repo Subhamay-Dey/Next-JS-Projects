@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { BackgroundBoxesDemo } from "@/components/Background";
-import NavbarDemo from "@/components/Navbar";
-import { HeroParallaxDemo } from "@/components/Hero";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,9 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={inter.className}>
-        <NavbarDemo/>
-        <BackgroundBoxesDemo/>
-        <HeroParallaxDemo/>
         {children}
         </body>
     </html>
