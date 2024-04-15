@@ -31,7 +31,7 @@ export const sendEmail = async({email, emailType, userId} : any) => {
             from: 'ncdey1966@gmail.com', // sender address
             to: email, // list of receivers
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
-            html: "<b>Hello world?</b>", // html body
+            html: "<b>Click here</b>", // html body
           }
 
           const mailResponse = await transporter.sendMail(mailOptions)
