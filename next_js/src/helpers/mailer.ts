@@ -17,24 +17,23 @@ export const sendEmail = async({email, emailType, userId} : any) => {
           )
         }
 
-        const transporter = nodemailer.createTransport({
-            host: "smtp.ethereal.email",
-            port: 465,
-            secure: true,
-            auth: {
-              user: "maddison53@ethereal.email",
-              pass: "jn7jnAPss4f63QBp6D",
-            },
-          });
+        var transport = nodemailer.createTransport({
+          host: "sandbox.smtp.mailtrap.io",
+          port: 2525,
+          auth: {
+            user: "564a2c38258e23", 
+            pass: "9bbccd984dba2f"
+          }
+        });
 
           const mailOptions = {
             from: 'ncdey1966@gmail.com', // sender address
             to: email, // list of receivers
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password", // Subject line
-            html: "<b>Click here</b>", // html body
+            html: `<p>Click <a href="$">here</a> to ${emailType === 'VERIFY' ? "Verify your email" : "Reset your password"} </p>`, // html body
           }
 
-          const mailResponse = await transporter.sendMail(mailOptions)
+          const mailResponse = await transport.sendMail(mailOptions)
           return mailResponse
         
     } catch (error:any) {
