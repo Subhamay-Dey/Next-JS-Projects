@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({
             message: "User created successfully",
-            user: savedUser,
+            savedUser,
             sucess: true
         })
 
