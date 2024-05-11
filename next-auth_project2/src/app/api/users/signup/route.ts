@@ -1,4 +1,3 @@
-"use Server"
 import {connect} from "@/database/database";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
