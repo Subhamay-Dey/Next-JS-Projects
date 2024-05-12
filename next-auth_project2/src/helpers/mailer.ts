@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs";
 import User from "@/models/userModel";
 
 export const sendEmail = async({email, emailType, userId}: any) => {
+  
     try {
 
       // create a hased token
@@ -16,11 +17,10 @@ export const sendEmail = async({email, emailType, userId}: any) => {
               {forgotPasswordToken: hashedToken, forgotPasswordTokenExpiry: Date.now() + 3600000})
       }
 
-      
         const transporter = nodemailer.createTransport({
             host: "smtp.ethereal.email",
             port: 465,
-            secure: false, 
+            secure: true,
             auth: {
               user: "maddison53@ethereal.email",
               pass: "jn7jnAPss4f63QBp6D",
