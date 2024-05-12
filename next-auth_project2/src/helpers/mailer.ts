@@ -17,15 +17,14 @@ export const sendEmail = async({email, emailType, userId}: any) => {
               {forgotPasswordToken: hashedToken, forgotPasswordTokenExpiry: Date.now() + 3600000})
       }
 
-        const transporter = nodemailer.createTransport({
-            host: "smtp.ethereal.email",
-            port: 465,
-            secure: true,
-            auth: {
-              user: "maddison53@ethereal.email",
-              pass: "jn7jnAPss4f63QBp6D",
-            },
-          });
+      const transport = nodemailer.createTransport({
+        host: "sandbox.smtp.mailtrap.io",
+        port: 2525,
+        auth: {
+          user: "564a2c38258e23",
+          pass: "9bbccd984dba2f"
+        }
+      });
 
           const mailOptions = {
             from: 'ncdey1966@gmail.com',
@@ -36,7 +35,7 @@ export const sendEmail = async({email, emailType, userId}: any) => {
             </p>`
           }
 
-          const mailResponse = await transporter.sendMail(mailOptions)
+          const mailResponse = await transport.sendMail(mailOptions)
           return mailResponse;
 
     } catch (error:any) {
