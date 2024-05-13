@@ -3,7 +3,7 @@ import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import { sendEmail } from "@/helpers/mailer";
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 connect();
 
@@ -28,8 +28,16 @@ export async function POST(request:NextRequest) {
             )
         }
 
+        const tokendata = {
+            id: user._id,
+            email: user.email,
+            username: user.username
+        }
 
+        const token = await jwt.sign(tokendata, process.env.TOKEN_SECRET!, { expiresIn: '1d' })
         
+        
+
     } catch (error:any) {
 
         return NextResponse.json({error: error.message},
