@@ -91,7 +91,7 @@ function SignupPage() {
             <button
             onClick={onSignUp}
             className="px-6 py-3 mt-4 text-lg font-semibold border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
-            <Link href="/login" className='font-bold text-lg' >Visit login page</Link>
+            <Link href="/login" className='font-semibold text-lg' >Visit login page</Link>
         </div>
     </>
   )

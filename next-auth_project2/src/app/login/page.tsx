@@ -65,7 +65,7 @@ export default function LoginPage() {
             <button
             onClick={onLogin}
             className="py-3 px-6 mt-4 text-lg font-semibold border border-gray-300 rounded-lg mb-6 focus:outline-none focus:border-gray-600">Login here</button>
-            <Link href="/signup">Visit Signup page</Link>
+            <Link href="/signup" className="font-semibold text-lg">Visit Signup page</Link>
         </div>
     )
 
