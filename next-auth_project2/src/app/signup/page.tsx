@@ -59,11 +59,11 @@ function SignupPage() {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1>{loading ? "processing" : "SignUp"}</h1>
+        <h1 className='mb-6 text-3xl font-bold'>{loading ? "processing" : "SignUp"}</h1>
         <hr />
         <label htmlFor="username">username</label>
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="py-3 px-6 mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="username"
             type="text"
             value={user.username}
@@ -72,7 +72,7 @@ function SignupPage() {
             />
         <label htmlFor="email">email</label>
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="py-3 px-6 mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="email"
             type="text"
             value={user.email}
@@ -81,7 +81,7 @@ function SignupPage() {
             />
         <label htmlFor="password">password</label>
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="py-3 px-6 mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="password"
             type="password"
             value={user.password}
@@ -90,8 +90,8 @@ function SignupPage() {
             />
             <button
             onClick={onSignUp}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
-            <Link href="/login">Visit login page</Link>
+            className="px-6 py-3 mt-4 text-lg font-semibold border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
+            <Link href="/login" className='font-bold text-lg' >Visit login page</Link>
         </div>
     </>
   )
